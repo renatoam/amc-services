@@ -1,0 +1,35 @@
+{
+  "name": "amc-services",
+  "version": "0.0.1",
+  "description": "Front-End project for electrical services company",
+  "main": "index.js",
+  "author": "Renato Alves de Melo",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint --dir src",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "next": "^12.0.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.18",
+    "@types/react": "^17.0.39",
+    "eslint": "8.9.0",
+    "eslint-config-next": "12.0.10",
+    "eslint-config-prettier": "^8.3.0",
+    "git-commit-msg-linter": "^4.0.7",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.4",
+    "typescript": "^4.5.5"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
+  }
+}
