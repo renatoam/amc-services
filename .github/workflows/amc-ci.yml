@@ -32,16 +32,16 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-      - run: yarn
+        run: yarn
 
       - name: Run tests
-      - run: yarn test:ci
+        run: yarn test:ci
 
       - name: Run ESLint
-      - run: yarn lint
+        run: yarn lint
 
       - name: Check commit messages
-      - uses: wagoid/commitlint-github-action@v4
+        uses: wagoid/commitlint-github-action@v4
   vercel:
     runs-on: ${{matrix.os}}
 
