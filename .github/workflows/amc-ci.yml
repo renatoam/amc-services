@@ -22,13 +22,26 @@ jobs:
     steps:
       - name: Get updated code from repo
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          # Fetch depth is necessary that you specify the fetch-depth argument to actions/checkout@v2 step. By default they fetch only latest commit of the branch, but we need more commits since we validate a range of commit messages.
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
       - run: yarn
-      - run: yarn lint
+
+      - name: Run tests
       - run: yarn test:ci
+
+      - name: Run ESLint
+      - run: yarn lint
+
+      - name: Check commit messages
+      - uses: wagoid/commitlint-github-action@v4
   vercel:
     runs-on: ${{matrix.os}}
 
