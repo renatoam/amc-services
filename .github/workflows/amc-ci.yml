@@ -40,11 +40,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Set Env Vars on Vercel Project
-        uses: dkershner6/vercel-set-env-action@v1
-        with:
-          token: ${{ secrets.AMC_VERCEL_TOKEN }}
-          projectName: amc-services # project name in Vercel
       - name: deploy to vercel
         uses: amondnet/vercel-action@v20
         with:
