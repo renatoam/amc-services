@@ -24,4 +24,10 @@ To init server over the build, after the build command, run:
 
 After every `commit` command, the staged files will be linted using `lint-staged`.
 As well every `commit` message will be linted using `git-commit-msg-linter`.
-`prettier` is used for formatting. 
+`prettier` is used for formatting.
+
+## CI/CD
+
+### Coverage check
+
+To check project coverage, we've chose `Codecov` because it has a basic plan that allows use it for _private_ repos. I can generate (upload) up to **250 reports per month for free**. I could choose `Coveralls` for public repos, but there is a charge for private repos.
