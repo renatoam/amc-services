@@ -1,25 +1,61 @@
-name: AMC CI | Deploy
+# name: AMC CI | Deploy
+
+# on:
+#   workflow_call:
+
+# jobs:
+#   deploy:
+#     runs-on: ${{matrix.os}}
+
+#     strategy:
+#       matrix:
+#         node-version: [14.x]
+#         os: [ubuntu-latest]
+#         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: deploy to vercel
+#         uses: amondnet/vercel-action@v20
+#         with:
+#           vercel-token: ${{ secrets.AMC_VERCEL_TOKEN || github.token }} # Required
+#           # github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
+#           # vercel-args: '--prod' #Optional
+#           vercel-org-id: ${{ secrets.ORG_ID}} #Required
+#           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
+
+name: "Deploy"
 
 on:
-  workflow_call:
+  release:
+    types:
+      - published
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-  deploy:
-    runs-on: ${{matrix.os}}
-
-    strategy:
-      matrix:
-        node-version: [14.x]
-        os: [ubuntu-latest]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+  vercel:
+    runs-on: ubuntu-latest
+    name: "Deploy front-end"
 
     steps:
       - uses: actions/checkout@v2
-      - name: deploy to vercel
-        uses: amondnet/vercel-action@v20
+      - uses: actions/setup-node@v1
         with:
-          vercel-token: ${{ secrets.AMC_VERCEL_TOKEN || github.token }} # Required
-          # github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
-          # vercel-args: '--prod' #Optional
-          vercel-org-id: ${{ secrets.ORG_ID}} #Required
-          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
+          node-version: "14"
+          registry-url: https://registry.npmjs.org/
+
+      - name: "Deploy to Vercel"
+        run: |
+          prodRun=""
+          if [[ ${GITHUB_REF} == "refs/heads/main" ]]; then
+            prodRun="--prod"
+          fi
+
+          npx vercel --token ${VERCEL_TOKEN} $prodRun
+        env:
+          VERCEL_TOKEN: ${{ secrets.AMC_VERCEL_TOKEN }}
+          VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
+          VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
