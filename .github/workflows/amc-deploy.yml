@@ -56,7 +56,7 @@ jobs:
             prodRun="--prod"
           fi
 
-          npx vercel logout && npx vercel login --github && npx vercel --token ${VERCEL_TOKEN} $prodRun --confirm
+          npx vercel logout && npx vercel login renatoalves92@gmail.com && npx vercel --token ${VERCEL_TOKEN} $prodRun --confirm
         env:
           VERCEL_TOKEN: ${{ secrets.AMC_VERCEL_TOKEN || github.token }}
           VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
