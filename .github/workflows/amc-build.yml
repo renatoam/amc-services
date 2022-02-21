@@ -1,11 +1,9 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: AMC CI
+name: AMC CI | Build
 
 on:
+  workflow_call:
   push:
-    branches: [main]
+    branches: [main, develop]
   pull_request:
     branches: ["*"]
 
@@ -47,28 +45,10 @@ jobs:
       - name: Generate coverage reports with Codecov
         uses: codecov/codecov-action@v2
         with:
-          token: ${{ secrets.UPLOAD_TOKEN }} # not required for public repos
+          # token: ${{ secrets.UPLOAD_TOKEN }} # not required for public repos
           # files: ./coverage1.xml,./coverage2.xml # optional
           # flags: unittests # optional
-          name: codecov-umbrella # optional
+          name: Codecov checking # optional
           fail_ci_if_error: true # optional (default = false)
           verbose: true # optional (default = false)
-  vercel:
-    runs-on: ${{matrix.os}}
 
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-        os: [ubuntu-latest, windows-latest, macos-latest]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: deploy to vercel
-        uses: amondnet/vercel-action@v20
-        with:
-          vercel-token: ${{ secrets.AMC_VERCEL_TOKEN }} # Required
-          # github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
-          # vercel-args: '--prod' #Optional
-          vercel-org-id: ${{ secrets.ORG_ID}} #Required
-          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required

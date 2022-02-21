@@ -1,0 +1,25 @@
+name: AMC CI | Deploy
+
+on:
+  workflow_call:
+
+jobs:
+  deploy:
+    runs-on: ${{matrix.os}}
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      # - uses: actions/checkout@v2
+      - name: deploy to vercel
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.AMC_VERCEL_TOKEN }} # Required
+          # github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
+          # vercel-args: '--prod' #Optional
+          vercel-org-id: ${{ secrets.ORG_ID}} #Required
+          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
