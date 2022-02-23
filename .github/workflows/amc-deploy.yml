@@ -41,8 +41,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Deploy to Vercel Action
         uses: BetaHuhn/deploy-to-vercel-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           VERCEL_TOKEN: ${{ secrets.AMC_VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
