@@ -48,10 +48,9 @@ jobs:
         with:
           node-version: "14"
           registry-url: https://registry.npmjs.org/
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Deploy to Vercel"
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           prodRun=""
           if [[ ${GITHUB_REF} == "refs/heads/main" ]]; then
