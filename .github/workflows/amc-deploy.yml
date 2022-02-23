@@ -48,6 +48,7 @@ jobs:
         with:
           node-version: "14"
           registry-url: https://registry.npmjs.org/
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Deploy to Vercel"
         run: |
