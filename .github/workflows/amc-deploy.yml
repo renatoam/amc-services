@@ -24,41 +24,23 @@
 #           vercel-org-id: ${{ secrets.ORG_ID}} #Required
 #           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
 
-name: "Deploy"
-
+name: Deploy CI
 on:
-  workflow_call:
-
-  release:
-    types:
-      - published
   push:
-    branches:
-      - main
-  workflow_dispatch:
-
+    branches: [master]
+  pull_request:
+    types: [opened, synchronize, reopened]
 jobs:
-  vercel:
+  deploy:
     runs-on: ubuntu-latest
-    name: "Deploy front-end"
-
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deploy to Vercel Action
+        uses: BetaHuhn/deploy-to-vercel-action@v1
         with:
-          node-version: "14"
-          registry-url: https://registry.npmjs.org/
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: "Deploy to Vercel"
-        run: |
-          prodRun=""
-          if [[ ${GITHUB_REF} == "refs/heads/main" ]]; then
-            prodRun="--prod"
-          fi
-
-          npx vercel logout && npx vercel login renatoalves92@gmail.com && npx vercel --token ${VERCEL_TOKEN} $prodRun --confirm
-        env:
-          vercel-token: ${{ secrets.AMC_VERCEL_TOKEN || github.token }}
-          vercel-project-id: ${{ secrets.PROJECT_ID }}
-          vercel-org-id: ${{ secrets.ORG_ID }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          VERCEL_TOKEN: ${{ secrets.AMC_VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
