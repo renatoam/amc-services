@@ -1,53 +1,27 @@
-# name: AMC CI | Deploy
+name: AMC CI | Deploy
 
-# on:
-#   workflow_call:
-
-# jobs:
-#   deploy:
-#     runs-on: ${{matrix.os}}
-
-#     strategy:
-#       matrix:
-#         node-version: [14.x]
-#         os: [ubuntu-latest]
-#         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: deploy to vercel
-#         uses: amondnet/vercel-action@v20
-#         with:
-#           vercel-token: ${{ secrets.AMC_VERCEL_TOKEN || github.token }} # Required
-#           # github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
-#           # vercel-args: '--prod' #Optional
-#           vercel-org-id: ${{ secrets.ORG_ID}} #Required
-#           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
-
-name: Deploy CI
 on:
   workflow_call:
 
-  push:
-    branches: [master]
-  pull_request:
-    types: [opened, synchronize, reopened]
 jobs:
+  release:
+    uses: ./.github/workflows/amc-release.yml
   deploy:
-    runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ${{matrix.os}}
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+        os: [ubuntu-latest]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Deploy to Vercel Action
-        uses: BetaHuhn/deploy-to-vercel-action@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
+      - uses: actions/checkout@v2
+      - name: deploy to vercel
+        uses: amondnet/vercel-action@v20
         with:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN || github.token }} # Required
+          # github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
+          # vercel-args: '--prod' #Optional
+          vercel-org-id: ${{ secrets.ORG_ID}} #Required
+          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
