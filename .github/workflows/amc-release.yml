@@ -1,11 +1,15 @@
 name: Release
 on:
-  workflow_call:
-
+  push:
+    branches:
+      - "main"
 jobs:
+  build:
+    uses: ./.github/workflows/amc-build.yml
   release:
     name: Release
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Checkout
         uses: actions/checkout@v2
