@@ -1,8 +1,10 @@
 name: Release
 on:
-  push:
-    branches:
-      - "main"
+  workflow_call:
+
+  # push:
+  #   branches:
+  #     - "main"
 jobs:
   build:
     uses: ./.github/workflows/amc-build.yml
