@@ -1,7 +1,7 @@
-import type { NextFetchEvent, NextRequest } from 'next/server'
+import type { NextFetchEvent, NextRequest } from "next/server";
 
 export function middleware(req: NextRequest, ev: NextFetchEvent) {
-  console.info({ req, ev })
+  console.info({ req, ev });
 
-  return new Response('Hello, world!')
+  return new Response("After configured workflow!");
 }
