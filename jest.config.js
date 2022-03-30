@@ -29,11 +29,6 @@ const customJestConfig = {
       statements: 100,
     },
   },
-  moduleNameMapper: {
-    "^@shared/(.*)$": "<rootDir>/src/modules/shared/$1",
-    "^@home/(.*)$": "<rootDir>/src/modules/home/$1",
-    "^@about/(.*)$": "<rootDir>/src/modules/about/$1",
-  },
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async

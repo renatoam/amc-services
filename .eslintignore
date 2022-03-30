@@ -1,3 +1,2 @@
 .eslintrc.js
 jest.config.js
-.storybook/*.js
