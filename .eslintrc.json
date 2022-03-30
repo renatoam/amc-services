@@ -7,7 +7,6 @@
     "plugin:jest/recommended",
     "plugin:jest/style",
     "plugin:testing-library/react",
-    "plugin:storybook/recommended",
     "next",
     "next/core-web-vitals",
     "prettier"
@@ -21,7 +20,5 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": {
-    "react/no-unescaped-entities": "off"
-  }
+  "rules": {}
 }

@@ -39,36 +39,3 @@ Our default and stable branch is `main` and our development branch is `develop`.
 ### Coverage check
 
 To check project coverage, we've chose `Codecov` because it has a basic plan that allows use it for _private_ repos. I can generate (upload) up to **250 reports per month for free**. I could choose `Coveralls` for public repos, but there is a charge for private repos.
-
-## Styling
-
-### Material-UI and Emotion
-
-[explain why mui and why emotion instead SC, ref: https://mui.com/guides/styled-engine/]
-Basically, I'll need many complex components in the future and MUI has already many of them ready to use.
-Styled Components still doesn't work fined with SSR if used as style engine for MUI.
-Emotion is very similar to SC;
-
-### Icons
-
-We've opted for using Material Icons because they're slightly more performatic. In addition, we can use SVG Icons wrapper to create new custom icons.
-
-**Importing approach**
-
-Following the Material-UI documentation, using default imports is better than use named imports, because we just import the icon itself, not all the lib. Reference: [Materia-UI Docs](https://mui.com/guides/minimizing-bundle-size).
-
-```jsx
-import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
-import ThreeDRotation from "@mui/icons-material/ThreeDRotation";
-```
-
-But we agree that use named imports is better approach to Dev Experience, so in order to mitigate this, we use a pattern similar to barrell pattern:
-
-```jsx
-import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
-import ThreeDRotation from "@mui/icons-material/ThreeDRotation";
-
-export { AccessAlarmIcon, ThreeDRotation };
-```
-
-We centralize the imports into a index file and re-export using named export.

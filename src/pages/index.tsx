@@ -1,5 +1,5 @@
-import Title from '@home/components/title'
-import Text from '@home/components/text'
+import Title from '../components/title'
+import Text from '../components/text'
 
 export default function Home() {
   return (
