@@ -42,18 +42,27 @@ To check project coverage, we've chose `Codecov` because it has a basic plan tha
 
 ## Styling
 
+It's important to decide your styling approach before to start the project in order to have all the style dependencies ready.
+
+We've opted for an approach using a "ready for use" design system, already established and popular in the market.
+
+But we also can create our own components and customize the lib components.
+
+[Reference](https://www.freecodecamp.org/news/how-to-style-react-apps-with-css/)
+
 ### Material-UI and Emotion
 
-[explain why mui and why emotion instead SC, ref: https://mui.com/guides/styled-engine/]
-Basically, I'll need many complex components in the future and MUI has already many of them ready to use.
-Styled Components still doesn't work fined with SSR if used as style engine for MUI.
-Emotion is very similar to SC;
+Basically, we'll need many complex components in the future and MUI has already many of them ready to use. In addition, our team has more familiarity and previous experience working with MUI.
+
+Our team loves Styled Components. Really. But it still doesn't work fine with SSR if used as style engine for MUI. So, since MUI uses Emotion as default engine and it is very similar to SC, that was a relatively easy choice.
+
+[Reference for "why Emotion instead Styled Components as the style engine](https://mui.com/guides/styled-engine/)
 
 ### Icons
 
-We've opted for using Material Icons because they're slightly more performatic. In addition, we can use SVG Icons wrapper to create new custom icons.
+We've opted for using Material Icons because they're slightly more practice than import a specific lib for that or create our own icons. In addition, we can use SVG Icons wrapper to create new custom icons and keep consistency.
 
-**Importing approach**
+**Importing MUI icons approach**
 
 Following the Material-UI documentation, using default imports is better than use named imports, because we just import the icon itself, not all the lib. Reference: [Materia-UI Docs](https://mui.com/guides/minimizing-bundle-size).
 
