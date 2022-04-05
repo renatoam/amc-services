@@ -1,0 +1,190 @@
+:root {
+  /* Color Palette */
+  --white: #fff;
+  --neutral-100: #e1dcf0;
+  --black: #000;
+  --neutral-50: rgba(235, 231, 251, 0.5);
+  --neutral-200: #d1cde0;
+  --neutral-300: #c2bed1;
+  --neutral-800: #484357;
+  --neutral-400: #b3aec2;
+  --neutral-500: #a39fb3;
+  --neutral-600: #858194;
+  --neutral-900: #292538;
+  --neutral-700: #666275;
+  --primary-500: #673dff;
+  --primary-400: #815eff;
+  --primary-300: #9c80ff;
+  --primary-200: #b6a1ff;
+  --primary-100: #d0c2ff;
+  --primary-1000: #3a3464;
+  --secondary-500: #ffc84a;
+  --secondary-400: #ffd269;
+  --secondary-300: #ffdb88;
+  --secondary-200: #ffe5a7;
+  --secondary-100: #ffeec6;
+  --secondary-1000: #ba9132;
+  --secondary-700: #f2aa03;
+  --success-500: #36b37e;
+  --success-400: #5dc397;
+  --success-300: #83d2b1;
+  --success-200: #aae2ca;
+  --success-100: #d0f1e3;
+  --warning-500: #f80;
+  --warning-400: #ff9d2b;
+  --warning-300: #ffb155;
+  --warning-200: #ffc680;
+  --warning-100: #ffdaaa;
+  --error-500: #ff5630;
+  --error-400: #fe785a;
+  --error-300: #fc9a84;
+  --error-200: #fbbcae;
+  --error-100: #f9ded8;
+  --information-500: #1774c0;
+  --information-400: #3a8aca;
+  --information-300: #5e9fd5;
+  --information-200: #81b5df;
+  --information-100: #a4cae9;
+
+  /* Typography */
+
+  --fs-display-1: 11.92rem;
+  --fw-display-1: bold;
+  --lh-display-1: 2;
+  
+  --fs-display-2: 9.54rem;
+  --fw-display-2: bold;
+  --lh-display-2: normal;
+  
+  --fs-heading-1: 7.63rem;
+  --fw-heading-1: bold;
+  --lh-heading-1: normal;
+  
+  --fs-heading-2: 6.1rem;
+  --fw-heading-2: bold;
+  --lh-heading-2: normal;
+  
+  --fs-heading-3: 4.88rem;
+  --fw-heading-3: bold;
+  --lh-heading-3: normal;
+  
+  --fs-heading-4: 3.91rem;
+  --fw-heading-4: bold;
+  --lh-heading-4: normal;
+  
+  --fs-heading-5: 3.13rem;
+  --fw-heading-5: bold;
+  --lh-heading-5: normal;
+  
+  --fs-heading-6: 2.5rem;
+  --fw-heading-6: bold;
+  --lh-heading-6: normal;
+  
+  --fs-body-large: 3.2rem;
+  --fw-body-large: normal;
+  --lh-body-large: 1.5;
+  
+  --fs-body-regular: 2.4rem;
+  --fw-body-regular: normal;
+  --lh-body-regular: 1.67;
+  
+  --fs-body-small: 1.6rem;
+  --fw-body-small: normal;
+  --lh-body-small: 2;
+
+  /* Spacing */
+  --spacing-xxs: 0.4rem;
+  --spacing-xs: 0.8rem;
+  --spacing-s: 1.2rem;
+  --spacing-m: 1.6rem;
+  --spacing-l: 2rem;
+  --spacing-xl: 2.4rem;
+  --spacing-xxl: 2.8rem;
+}
+
+/* Reset CSS */
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+ *:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value and remove margin and padding */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Define source for font size and family */
+html {
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+ - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  /* -webkit-line-break: after-white-space; */
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
