@@ -1,7 +1,9 @@
+import FilletWrapper from "@home/components/Fillet";
+
 export default function HomePage() {
   return (
     <>
-      <p>Test</p>
+      <FilletWrapper>Infos</FilletWrapper>
     </>
-  )
+  );
 }

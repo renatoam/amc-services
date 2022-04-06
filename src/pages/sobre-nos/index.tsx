@@ -1,5 +1,5 @@
-import Title from "@home/components/title";
-import Text from "@home/components/text";
+import Title from "@shared/components/atoms/Title";
+import Text from "@shared/components/atoms/Text";
 
 export default function AboutPage() {
   return (

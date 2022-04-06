@@ -1,4 +1,4 @@
-import Title from "@home/components/title";
+import Title from "@shared/components/atoms/Title";
 import { render, screen } from "@testing-library/react";
 
 describe("test for rendering title in homepage", () => {

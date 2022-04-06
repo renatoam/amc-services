@@ -1,0 +1,6 @@
+.fillet {
+  background-color: var(--primary-400);
+  color: var(--white);
+  display: flex;
+  padding: 2rem;
+}
