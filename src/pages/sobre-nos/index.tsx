@@ -1,5 +1,5 @@
-import Title from '@home/components/title'
-import Text from '@home/components/text'
+import Title from "@home/components/title";
+import Text from "@home/components/text";
 
 export default function AboutPage() {
   return (
@@ -7,5 +7,5 @@ export default function AboutPage() {
       <Title>About Page</Title>
       <Text />
     </>
-  )
+  );
 }
