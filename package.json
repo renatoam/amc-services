@@ -14,7 +14,7 @@
     "test": "jest --passWithNoTests",
     "test:ci": "jest --coverage --silent --ci",
     "lint-staged": "lint-staged",
-    "prepare": "husky install",
+    "prepare": "husky install && chmod ug+x .husky/*",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

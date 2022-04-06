@@ -1,11 +1,7 @@
-import Title from '@home/components/title'
-import Text from '@home/components/text'
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <main>
-      <Title>Homepage</Title>
-      <Text />
-    </main>
+    <>
+      <p>Test</p>
+    </>
   )
 }
