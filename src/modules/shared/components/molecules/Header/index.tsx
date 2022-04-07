@@ -1,4 +1,5 @@
 import Text from "@shared/components/atoms/Text";
+import Link from "@shared/components/atoms/Link";
 import { navLinks } from "@shared/constants/menu";
 import { StyledHeader, StyledNav } from "./styles";
 
@@ -7,9 +8,9 @@ export default function Header() {
     <StyledHeader role="banner">
       <StyledNav component="nav">
         {navLinks.map((item) => (
-          <a key={item.id} href={item.link}>
-            <Text>{item.text}</Text>
-          </a>
+          <Link key={item.id} href={item.link} title={item.text}>
+            <Text id={item.id.toString()}>{item.text}</Text>
+          </Link>
         ))}
       </StyledNav>
     </StyledHeader>

@@ -37,4 +37,39 @@ describe("testing application header", () => {
 
     expect(contact).toBeInTheDocument();
   });
+
+  it("should contains all four the links inside", () => {
+    render(<Header />);
+    const link = screen.getAllByRole("link");
+
+    expect(link).toHaveLength(4);
+  });
+
+  it("should have a links to #specialties", () => {
+    render(<Header />);
+    const link = screen.getByTitle("Especialidades");
+
+    expect(link).toHaveAttribute("href", "/#specialties");
+  });
+
+  it("should have a links to #attendance", () => {
+    render(<Header />);
+    const link = screen.getByTitle("Atendimento");
+
+    expect(link).toHaveAttribute("href", "/#attendance");
+  });
+
+  it("should have a links to #services", () => {
+    render(<Header />);
+    const link = screen.getByTitle("Serviços");
+
+    expect(link).toHaveAttribute("href", "/#services");
+  });
+
+  it("should have a links to #contact", () => {
+    render(<Header />);
+    const link = screen.getByTitle("Contato");
+
+    expect(link).toHaveAttribute("href", "/#contact");
+  });
 });

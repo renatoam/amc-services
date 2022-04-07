@@ -1,6 +1,11 @@
-import { ChildrenType } from "@shared/types";
+import { ReactNode } from "react";
 import { StyledText } from "./styles";
 
-export default function Text({ children }: ChildrenType) {
-  return <StyledText>{children}</StyledText>;
+interface TextProps {
+  id?: string;
+  children: ReactNode;
+}
+
+export default function Text({ id, children }: TextProps) {
+  return <StyledText id={id}>{children}</StyledText>;
 }
