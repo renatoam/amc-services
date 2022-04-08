@@ -1,11 +1,28 @@
 import { ReactNode } from "react";
-import { StyledText } from "./styles";
+import { Paragraph, Span } from "./styles";
 
 interface TextProps {
   id?: string;
   children: ReactNode;
+  variant: "p" | "span";
 }
 
-export default function Text({ id, children }: TextProps) {
-  return <StyledText id={id}>{children}</StyledText>;
+const textVariants = {
+  p: Paragraph,
+  span: Span,
+};
+
+export default function Text({
+  variant,
+  id = "",
+  children,
+  ...props
+}: TextProps) {
+  const Component = textVariants[variant];
+
+  return (
+    <Component id={id} {...props}>
+      {children}
+    </Component>
+  );
 }

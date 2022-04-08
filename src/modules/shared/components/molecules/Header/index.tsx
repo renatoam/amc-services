@@ -1,18 +1,24 @@
-import Text from "@shared/components/atoms/Text";
 import Link from "@shared/components/atoms/Link";
 import { navLinks } from "@shared/constants/menu";
-import { StyledHeader, StyledNav } from "./styles";
+import { Header, List, Text } from "./styles";
+import ListItem from "@shared/components/atoms/ListItem";
+import Logo from "../Logo";
 
-export default function Header() {
+export default function DefaultHeader() {
   return (
-    <StyledHeader role="banner">
-      <StyledNav component="nav">
+    <Header>
+      <Logo />
+      <List>
         {navLinks.map((item) => (
-          <Link key={item.id} href={item.link} title={item.text}>
-            <Text id={item.id.toString()}>{item.text}</Text>
-          </Link>
+          <ListItem key={item.id}>
+            <Link href={item.link} title={item.text}>
+              <Text id={item.id.toString()} variant="p">
+                {item.text}
+              </Text>
+            </Link>
+          </ListItem>
         ))}
-      </StyledNav>
-    </StyledHeader>
+      </List>
+    </Header>
   );
 }
