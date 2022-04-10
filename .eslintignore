@@ -6,3 +6,4 @@ jest.config.js
 .next
 node_modules
 coverage
+cypress
