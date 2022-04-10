@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1649297288153" clover="3.2.0">
+  <project timestamp="1649297288153" name="All files">
+    <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3" elements="18" coveredelements="18" complexity="0" loc="15" ncloc="15" packages="3" files="5" classes="5"/>
+    <package name="components.atoms.Text">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="/Users/renatomelo/Documents/estudos/projects/amc/src/modules/shared/components/atoms/Text/index.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/renatomelo/Documents/estudos/projects/amc/src/modules/shared/components/atoms/Text/styles.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.molecules.Header">
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="index.tsx" path="/Users/renatomelo/Documents/estudos/projects/amc/src/modules/shared/components/molecules/Header/index.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="9" count="20" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/renatomelo/Documents/estudos/projects/amc/src/modules/shared/components/molecules/Header/styles.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="constants">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="menu.ts" path="/Users/renatomelo/Documents/estudos/projects/amc/src/modules/shared/constants/menu.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

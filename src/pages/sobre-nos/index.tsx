@@ -1,5 +1,5 @@
-import Title from "@home/components/title";
-import Text from "@home/components/text";
+import Title from "@about/components/title";
+import Text from "@about/components/text";
 
 export default function AboutPage() {
   return (
