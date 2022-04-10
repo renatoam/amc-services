@@ -30,6 +30,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-interactions": "^6.4.19",
@@ -54,7 +56,6 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-storybook": "^0.5.7",
     "eslint-plugin-testing-library": "^5.0.5",
-    "git-commit-msg-linter": "^4.0.7",
     "husky": "^7.0.4",
     "jest": "^27.5.1",
     "lint-staged": "^12.3.4",

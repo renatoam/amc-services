@@ -7,3 +7,4 @@ jest.config.js
 node_modules
 coverage
 cypress
+commitlint.config.js

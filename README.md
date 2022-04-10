@@ -25,6 +25,8 @@ To init server over the build, after the build command, run:
 After every `commit` command, the staged files will be linted using `lint-staged`.
 As well every `commit` message will be linted using `git-commit-msg-linter`.
 `prettier` is used for formatting.
+We won't lint styles because for now the configuration is too complicated* and it's not worth to spend time on it.
+*: actually, we're saying about `Stylint` with _CSS-in-JS_
 
 ## Git Workflow
 
