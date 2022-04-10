@@ -2,4 +2,5 @@ Environment Setup (remaining config)
 
 ☐ Replace git-commit-msg-linter by Commitlint
 ☐ Create plop files
+☐ Install and configure stylelint
 ☐ Install Cypress

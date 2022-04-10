@@ -1,7 +1,14 @@
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
 
-import '@shared/styles/global.css'
+import "@shared/styles/global.css";
+import DefaultLayout from "@shared/layout/default";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <DefaultLayout>
+        <Component {...pageProps} />
+      </DefaultLayout>
+    </>
+  );
 }
