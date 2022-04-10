@@ -4,16 +4,32 @@ import RawText from "@shared/components/atoms/Text";
 
 export const Header = styled.header`
   border-bottom: 0.08rem solid var(--neutral-200);
+  display: grid;
+  place-items: center;
+`;
+
+export const HeaderContent = styled.section`
+  align-items: center;
   display: flex;
   height: 11.2rem;
   justify-content: space-around;
+  width: clamp(60rem, 70vw, 140rem);
+
+  @media (max-width: 700px) {
+    & {
+      width: clamp(30rem, 70vw, 65rem);
+    }
+  }
 `;
 
 export const List = styled(RawList)`
   align-items: center;
   display: flex;
-  flex: 2 1 60%;
   justify-content: space-around;
+
+  &.hidden {
+    display: none;
+  }
 `;
 
 export const Text = styled(RawText)`

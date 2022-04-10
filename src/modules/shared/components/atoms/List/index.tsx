@@ -1,10 +1,17 @@
-import { ChildrenType } from "@shared/types";
+import { ReactNode } from "react";
 import { Nav, Ul } from "./styles";
 
-export default function List({ children }: ChildrenType) {
+interface ListProps {
+  className?: string;
+  children: ReactNode;
+}
+
+export default function List({ className, children, ...props }: ListProps) {
   return (
     <Nav>
-      <Ul role="list">{children}</Ul>
+      <Ul role="list" className={className} {...props}>
+        {children}
+      </Ul>
     </Nav>
   );
 }
