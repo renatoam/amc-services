@@ -1,4 +1,4 @@
-import Title from "@home/components/title";
+import Title from "@shared/components/atoms/Title";
 
 describe("Default Application Header", () => {
   beforeEach(() => {
