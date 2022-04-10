@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
 
 export default function Title({ children }: { children: ReactNode }) {
-  return <h1>{children}</h1>;
+  return <h1 id="titulo">{children}</h1>;
 }
