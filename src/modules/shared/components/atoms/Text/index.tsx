@@ -1,10 +1,28 @@
-export default function Text() {
+import { ReactNode } from "react";
+import { Paragraph, Span } from "./styles";
+
+interface TextProps {
+  id?: string;
+  children: ReactNode;
+  variant: "p" | "span";
+}
+
+const textVariants = {
+  p: Paragraph,
+  span: Span,
+};
+
+export default function Text({
+  variant,
+  id = "",
+  children,
+  ...props
+}: TextProps) {
+  const Component = textVariants[variant];
+
   return (
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor illum
-      expedita consequatur, quod aut dolorem doloribus asperiores quidem. Error
-      unde cum esse corrupti dolore quidem facilis tempora. Possimus, voluptate
-      voluptatibus!
-    </p>
+    <Component id={id} {...props}>
+      {children}
+    </Component>
   );
 }
