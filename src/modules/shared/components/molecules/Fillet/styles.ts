@@ -14,27 +14,28 @@ export const Text = styled(RawText)`
   }
 `;
 
-export const Fillet = styled.section`
+export const FilletContainer = styled.section`
   background-color: var(--primary-300);
   color: var(--white);
-  height: 72px;
+  height: 7.2rem;
+  display: flex;
 
   &.hidden {
     display: none;
   }
 `;
 
-export const WrapFillet = styled.div`
-  max-width: 1440px;
+export const WraperFillet = styled.section`
+  max-width: 144rem;
+  width: 100%;
   margin: auto;
   display: flex;
   justify-content: space-around;
-  padding: 2rem;
 `;
 
-export const WrapContentFillet = styled.div`
+export const WraperContentFillet = styled.section`
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 2rem;
   justify-content: space-between;
 `;

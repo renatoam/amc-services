@@ -1,28 +1,25 @@
-import { Text, Fillet, WrapContentFillet, WrapFillet } from "./styles";
+import {
+  Text,
+  FilletContainer,
+  WraperContentFillet,
+  WraperFillet,
+} from "./styles";
 import { textsFillet } from "@shared/constants/fillet";
 import { useMediaQuery } from "@mui/material";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import DateRangeIcon from "@mui/icons-material/DateRange";
-import PhoneIcon from "@mui/icons-material/Phone";
 
-export default function FilletWrapper() {
+export default function Fillet() {
   const matches = useMediaQuery("(max-width: 700px)");
+
   return (
-    <Fillet className={matches ? "hidden" : ""}>
-      <WrapFillet>
+    <FilletContainer className={matches ? "hidden" : ""}>
+      <WraperFillet>
         {textsFillet.map((item) => (
-          <WrapContentFillet key={item.id}>
-            {item.id === 1 ? (
-              <LocationOnIcon fontSize="large" />
-            ) : item.id === 2 ? (
-              <DateRangeIcon fontSize="large" />
-            ) : (
-              <PhoneIcon fontSize="large" />
-            )}
+          <WraperContentFillet key={item.id}>
+            {item.icon}
             <Text variant="p">{item.text}</Text>
-          </WrapContentFillet>
+          </WraperContentFillet>
         ))}
-      </WrapFillet>
-    </Fillet>
+      </WraperFillet>
+    </FilletContainer>
   );
 }
