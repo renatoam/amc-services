@@ -1,8 +1,8 @@
 import {
   Text,
   FilletContainer,
-  WraperContentFillet,
-  WraperFillet,
+  FilletContentWrapper,
+  FilletWrapper,
 } from "./styles";
 import { textsFillet } from "@shared/constants/fillet";
 import { useMediaQuery } from "@mui/material";
@@ -12,14 +12,14 @@ export default function Fillet() {
 
   return (
     <FilletContainer className={matches ? "hidden" : ""}>
-      <WraperFillet>
+      <FilletWrapper>
         {textsFillet.map((item) => (
-          <WraperContentFillet key={item.id}>
+          <FilletContentWrapper key={item.id}>
             {item.icon}
             <Text variant="p">{item.text}</Text>
-          </WraperContentFillet>
+          </FilletContentWrapper>
         ))}
-      </WraperFillet>
+      </FilletWrapper>
     </FilletContainer>
   );
 }

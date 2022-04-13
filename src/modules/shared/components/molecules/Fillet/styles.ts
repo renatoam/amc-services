@@ -25,7 +25,7 @@ export const FilletContainer = styled.section`
   }
 `;
 
-export const WraperFillet = styled.section`
+export const FilletWrapper = styled.section`
   max-width: 144rem;
   width: 100%;
   margin: auto;
@@ -33,7 +33,7 @@ export const WraperFillet = styled.section`
   justify-content: space-around;
 `;
 
-export const WraperContentFillet = styled.section`
+export const FilletContentWrapper = styled.section`
   display: flex;
   align-items: center;
   gap: 2rem;

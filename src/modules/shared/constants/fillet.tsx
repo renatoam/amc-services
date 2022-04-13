@@ -2,13 +2,13 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import PhoneIcon from "@mui/icons-material/Phone";
 
-interface textFillet {
+interface TextFillet {
   id: number;
   text: string;
   icon: JSX.Element;
 }
 
-export const textsFillet: Array<textFillet> = [
+export const textsFillet: Array<TextFillet> = [
   {
     id: 1,
     text: "CAPITAL, BARUERI E REGIÃO",
