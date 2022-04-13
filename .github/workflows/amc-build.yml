@@ -1,11 +1,8 @@
 name: AMC CI | Build
 
 on:
-  workflow_call:
-  # push:
-  #   branches: [main, develop]
-  # pull_request:
-  #   branches: ["*"]
+  pull_request:
+    branches: ["develop"]
 
 jobs:
   build:
