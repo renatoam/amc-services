@@ -4,7 +4,7 @@ import { Paragraph, Span } from "./styles";
 interface TextProps {
   id?: string;
   children: ReactNode;
-  variant: "p" | "span";
+  variant?: "p" | "span";
 }
 
 const textVariants = {
@@ -13,7 +13,7 @@ const textVariants = {
 };
 
 export default function Text({
-  variant,
+  variant = "p",
   id = "",
   children,
   ...props
