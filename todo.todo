@@ -3,3 +3,4 @@ Environment Setup (remaining config)
 ✔ Replace git-commit-msg-linter by Commitlint @done(22-04-10 20:42)
 ☐ Create plop files
 ✔ Install Cypress @done(22-04-10 20:42)
+✔ Install Sonar Linter (Sonar ESLint) @done(22-04-17 19:21)
