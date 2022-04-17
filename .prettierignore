@@ -1,0 +1,10 @@
+.eslintrc.js
+jest.config.js
+.storybook/*.js
+.github
+.husky
+.next
+node_modules
+coverage
+cypress
+commitlint.config.js

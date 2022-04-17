@@ -83,3 +83,5 @@ export { AccessAlarmIcon, ThreeDRotation };
 ```
 
 We centralize the imports into a index file and re-export using named export.
+
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=renatoam_amc-services)
