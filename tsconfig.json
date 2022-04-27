@@ -18,7 +18,8 @@
     "paths": {
       "@shared/*": ["./src/modules/shared/*"],
       "@home/*": ["./src/modules/home/*"],
-      "@about/*": ["./src/modules/about/*"]
+      "@about/*": ["./src/modules/about/*"],
+      "@contact/*": ["./src/modules/contact/*"],
     }
   },
   "types": ["jest"],
