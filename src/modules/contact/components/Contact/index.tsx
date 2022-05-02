@@ -1,30 +1,25 @@
+import { cities, LABEL_CITY } from "@contact/constants";
 import Input from "@shared/components/atoms/Input";
+import Select from "@shared/components/atoms/Select";
+import Form from "@shared/components/atoms/Form";
 
 export default function Contact() {
   return (
-    <form>
-      <section>
+    <section style={{ width: 1400, margin: 'auto' }}>
+      <Form>
         <Input type="text" name="name" id="name" label="Digite seu nome" />
-      </section>
-      <section>
         <Input type="text" name="phone" id="phone" label="Digite seu telefone" />
-      </section>
-      <section>
-        <label htmlFor="city">Cidade</label>
-        <select name="city" id="city">
-          <option value="barueri">Barueri</option>
-          <option value="carapicuiba">Carapicuíba</option>
-          <option value="osasco">Osasco</option>
-          <option value="jandira">Jandira</option>
-          <option value="itapevi">Itapevi</option>
-          <option value="cotia">Cotia</option>
-          <option value="capital">Capital</option>
-        </select>
-      </section>
-      <section>
-        <label htmlFor="description">Descrição</label>
-        <textarea name="description" id="description" />
-      </section>
-    </form>
+        <Select
+          id="city"
+          name="city"
+          options={cities}
+          label={LABEL_CITY}
+        />
+        <section>
+          <label htmlFor="description">Descrição</label>
+          <textarea name="description" id="description" />
+        </section>
+      </Form>
+    </section>
   )
 }
