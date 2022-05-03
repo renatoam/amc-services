@@ -8,9 +8,9 @@ export const CustomInput = styled(TextField)`
     border-radius: 0.8rem;
     color: var(--neutral-500);
     display: grid;
-    height: 5.6rem;
+    height: ${props => props.minRows ? 'auto' : '5.6rem'};
     place-items: center;
-    width: 42.4rem;
+    width: 100%;
 
     &:hover {
       fieldset {
@@ -19,7 +19,8 @@ export const CustomInput = styled(TextField)`
     }
   }
 
-  input {
+  input,
+  textarea {
     box-sizing: inherit;
     color: inherit;
     font-size: 2rem;
