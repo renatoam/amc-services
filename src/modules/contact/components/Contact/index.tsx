@@ -1,28 +1,24 @@
 import { cities, LABEL_CITY } from "@contact/constants";
 import Form from "@shared/components/atoms/Form";
-import Input from "@shared/components/atoms/Input";
-import Select from "@shared/components/atoms/Select";
+import InputForm from "@shared/components/molecules/InputForm";
+import SelectForm from "@shared/components/molecules/SelectForm";
 
 export default function Contact() {
   return (
     <section style={{ width: 1400, margin: 'auto' }}>
       <Form>
-        <Input name="name" id="name" label="Digite seu nome" />
-        <Input name="phone" id="phone" label="Digite seu telefone" />
-        <Select
+        <InputForm name="name" id="name" label="Digite seu nome" />
+        <InputForm name="phone" id="phone" label="Digite seu telefone" />
+        <SelectForm
           id="city"
           name="city"
           options={cities}
           label={LABEL_CITY}
         />
-        <Input
+        <InputForm
           id="description"
           name="description"
           label="Descreva o melhor possível seu problema"
-          multiline
-          minRows={3}
-          maxRows={4}
-          style={{ gridColumnStart: 1, gridColumnEnd: 3 }}
         />
       </Form>
     </section>

@@ -17,6 +17,9 @@
     "baseUrl": "./",
     "paths": {
       "@shared/*": ["./src/modules/shared/*"],
+      "@atoms/*": ["./src/modules/shared/components/atoms/*"],
+      "@molecules/*": ["./src/modules/shared/components/molecules/*"],
+      "@organisms/*": ["./src/modules/shared/components/organisms/*"],
       "@home/*": ["./src/modules/home/*"],
       "@about/*": ["./src/modules/about/*"],
       "@contact/*": ["./src/modules/contact/*"],

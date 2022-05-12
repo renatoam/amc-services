@@ -1,66 +1,40 @@
 import styled from "@emotion/styled";
-import TextField from '@mui/material/TextField';
 
-export const CustomInput = styled(TextField)`
-  margin: 1rem;
+export const CustomInput = styled.input`
+  border: .2rem solid var(--neutral-300);
+  border-radius: 0.8rem;
+  color: var(--neutral-500);
+  display: grid;
+  font-family: 'Montserrat';
+  font-size: 2rem;
+  padding: 1.6rem;
+  place-items: center;
+  height: 7.2rem;
+  transition: border .4s ease-in-out;
+  width: 100%;
+  word-break: break-all;
+  
+  &:hover {
+    border-color: var(--neutral-500);
+  }
 
-  > div {
-    border-radius: 0.8rem;
-    color: var(--neutral-500);
-    display: grid;
-    height: ${props => props.minRows ? 'auto' : '5.6rem'};
-    place-items: center;
-    width: 100%;
-
-    &:hover {
-      fieldset {
-        border-color: var(--neutral-500) !important;
-      }
+  &:focus {
+    + label {
+      background-color: var(--white);
+      border-radius: 2rem;
+      left: 1rem;
+      padding: 0 1rem;
+      top: 0;
     }
   }
 
-  input,
-  textarea {
-    box-sizing: inherit;
-    color: inherit;
-    font-size: 2rem;
-    height: 100%;
-    padding: 0 2rem;
-    width: 100%;
-
-    &:-webkit-autofill,
-    &:-webkit-autofill:hover,
-    &:-webkit-autofill:focus {
-      -webkit-box-shadow: 0 0 0 1000px var(--neutral-100) inset !important;
-      -webkit-font-smoothing: antialiased;
-      -webkit-text-fill-color: var(--neutral-700);
-      transition: all .2s ease-in-out;
-    }
-  }
-
-  fieldset {
-    border-color: var(--neutral-200);
-    border-width: 0.2rem;
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    box-shadow: 0 0 0 1000px var(--neutral-100) inset;
+    -webkit-box-shadow: 0 0 0 1000px var(--neutral-100) inset !important;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-fill-color: var(--neutral-700);
     transition: all .2s ease-in-out;
-  }
-
-  label {
-    color: var(--neutral-500);
-    font-family: inherit;
-    font-size: 2rem;
-
-    &.Mui-focused {
-      color: var(--neutral-700);
-
-      + div > fieldset {
-        border-color: var(--neutral-500) !important;
-      }
-    }
-  }
-
-  legend {
-    > span {
-      font-size: 1.7rem;
-    }
   }
 `
