@@ -4,7 +4,7 @@ import { CustomFormGroup } from "./styles";
 
 export default function FormGroup(props: ChildrenType) {
   return (
-    <CustomFormGroup>
+    <CustomFormGroup {...props}>
       {props.children}
     </CustomFormGroup>
   )
