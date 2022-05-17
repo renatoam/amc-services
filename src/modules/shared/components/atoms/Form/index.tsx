@@ -5,10 +5,10 @@ interface FormProps {
   children: ReactNode
 }
 
-export default function Form({ children }: FormProps) {
+export default function Form(props: FormProps) {
   return (
-    <CustomForm>
-      {children}
+    <CustomForm {...props}>
+      {props.children}
     </CustomForm>
   )
 }

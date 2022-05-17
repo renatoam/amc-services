@@ -6,9 +6,14 @@ export const CustomButton = styled.button`
   color: var(--white);
   display: grid;
   height: 7.2rem;
-  font-size: var(--fs-body-regular);
+  font-size: clamp(1.4rem, 6.5vw, 2.4rem);
+  margin-bottom: .8rem;
   padding: 1.6rem;
   place-content: center;
   text-transform: uppercase;
-  width: fit-content;
+  width: 100%;
+
+  @media (min-width: 60em) {
+    width: fit-content;
+  }
 `

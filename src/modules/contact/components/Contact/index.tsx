@@ -1,13 +1,14 @@
 import { cities, LABEL_CITY } from "@contact/constants";
-import Form from "@shared/components/atoms/Form";
 import InputForm from "@shared/components/molecules/InputForm";
 import SelectForm from "@shared/components/molecules/SelectForm";
+import TextareaForm from "@shared/components/molecules/TextareaForm";
 import ContactActions from "../ContactActions";
+import { Wrapper, CustomForm } from "./styles";
 
 export default function Contact() {
   return (
-    <section style={{ width: 1400, margin: 'auto' }}>
-      <Form>
+    <Wrapper>
+      <CustomForm>
         <InputForm name="name" id="name" label="Digite seu nome" />
         <InputForm name="phone" id="phone" label="Digite seu telefone" />
         <SelectForm
@@ -16,13 +17,13 @@ export default function Contact() {
           options={cities}
           label={LABEL_CITY}
         />
-        <InputForm
+        <TextareaForm
           id="description"
           name="description"
           label="Descreva o melhor possível seu problema"
         />
         <ContactActions />
-      </Form>
-    </section>
+      </CustomForm>
+    </Wrapper>
   )
 }

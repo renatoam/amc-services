@@ -6,7 +6,7 @@ export const CustomInput = styled.input`
   color: var(--neutral-500);
   display: grid;
   font-family: 'Montserrat';
-  font-size: 2rem;
+  font-size: clamp(1.4rem, 6vw, 2.4rem);
   padding: 1.6rem;
   place-items: center;
   height: 7.2rem;

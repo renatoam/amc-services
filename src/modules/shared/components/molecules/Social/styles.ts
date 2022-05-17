@@ -5,6 +5,7 @@ export const CustomFormGroupSocial = styled(FormGroup)`
   align-items: flex-start;
   display: flex;
   gap: .8rem;
-  margin: 0;
+  justify-content: space-around;
+  margin: .8rem 0;
   width: auto;
 `
