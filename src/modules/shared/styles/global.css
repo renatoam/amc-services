@@ -131,6 +131,7 @@ html {
 body {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 1.6rem;
+  height: 100vh;
 }
 
 /* Text elements */
