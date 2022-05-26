@@ -12,7 +12,7 @@
   --neutral-600: #858194;
   --neutral-900: #292538;
   --neutral-700: #666275;
-  --primary-500: #673dff;
+  --primary-500: #9470FF;
   --primary-400: #815eff;
   --primary-300: #9c80ff;
   --primary-200: #b6a1ff;
@@ -124,13 +124,19 @@
 
 /* Define source for font size and family */
 html {
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 62.5%;
 }
 
 body {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 1.6rem;
 }
+
+/* Text elements */
+p, h1, h2, h3, h4, h5, h6, span, div, section, a, ul, button {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+} 
 
 a {
   color: inherit;
@@ -139,7 +145,7 @@ a {
 
 /* Reapply the pointer cursor for anchor tags */
 a, button {
-  cursor: revert;
+  cursor: pointer;
 }
 
 /* Remove list styles (bullets/numbers) */
