@@ -1,5 +1,12 @@
 import { ReactNode } from "react";
 
-export default function Title({ children }: { children: ReactNode }) {
-  return <h1>{children}</h1>;
+interface TitleProps {
+  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+  children: ReactNode
+}
+
+export default function Title(props: TitleProps) {
+  const { variant: Heading = 'h2', children } = props
+
+  return <Heading>{children}</Heading>;
 }
