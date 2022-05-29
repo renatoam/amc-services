@@ -1,24 +1,20 @@
-import { SvgIconTypeMap } from "@mui/material";
-import { OverridableComponent } from "@mui/material/OverridableComponent";
+import { MuiIconProps } from "@shared/types/mui";
 import { GenericProps } from "@shared/types/react";
-import { CustomIcon } from "./styles";
-import Link from "../Link";
 import { Fragment } from "react";
+import Link from "../Link";
+import { CustomIcon } from "./styles";
 
-enum VariantIcon {
-  default = 'default',
-  circular = 'circular'
-}
+type VariantIconType = 'default' | 'circular'
 
 export interface IconProps extends GenericProps {
-  MuiIcon: OverridableComponent<SvgIconTypeMap<Record<string, never>, "svg">>
-  variant?: VariantIcon
+  MuiIcon: MuiIconProps
+  variant?: VariantIconType
   href?: string
   title?: string
 }
 
 export default function Icon(props: IconProps) {
-  const { variant = VariantIcon.circular, MuiIcon, href, title } = props
+  const { variant = 'circular', MuiIcon, href, title } = props
   const Wrapper = href ? Link : Fragment
 
   return (
