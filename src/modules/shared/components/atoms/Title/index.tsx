@@ -1,12 +1,14 @@
+import { HeadingType } from "@shared/types";
 import { ReactNode } from "react";
 
 interface TitleProps {
-  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+  variant?: HeadingType
+  hstyle?: HeadingType
   children: ReactNode
 }
 
 export default function Title(props: TitleProps) {
-  const { variant: Heading = 'h2', children } = props
+  const { variant: Heading = 'h2', hstyle = 'h2', children } = props
 
-  return <Heading>{children}</Heading>;
+  return <Heading className={hstyle}>{children}</Heading>;
 }

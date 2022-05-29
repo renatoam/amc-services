@@ -4,8 +4,8 @@ import FAQ from "@shared/components/organisms/FAQ";
 export default function HomePage() {
   return (
     <>
-      <Contact />
       <FAQ />
+      <Contact />
     </>
   )
 }

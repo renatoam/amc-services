@@ -5,6 +5,7 @@ interface TextProps {
   id?: string;
   children: ReactNode;
   variant?: "p" | "span";
+  size?: 'large' | 'regular' | 'small'
 }
 
 const textVariants = {
@@ -13,15 +14,16 @@ const textVariants = {
 };
 
 export default function Text({
-  variant = "p",
   id = "",
+  variant = "p",
+  size = 'regular',
   children,
   ...props
 }: TextProps) {
   const Component = textVariants[variant];
 
   return (
-    <Component id={id} {...props}>
+    <Component id={id} className={`body-${size}`} {...props}>
       {children}
     </Component>
   );
