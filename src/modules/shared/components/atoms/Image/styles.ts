@@ -1,3 +1,5 @@
 import styled from "@emotion/styled";
 
-export const Figure = styled.figure``;
+export const Figure = styled.figure`
+  position: relative;
+`;
