@@ -7,63 +7,37 @@ export const Text = styled(RawText)`
 
 export const AdvantagesContainer = styled.section`
   background-color: var(--primary-200);
-  height: 24rem;
+  min-height: 24rem;
   display: flex;
-  margin: 1rem 0;
-
-  @media (max-width: 1024px) {
-    & {
-      height: 100%;
-    }
-  }
+  margin: 1.2rem 0;
 `;
 
 export const AdvantagesWrapper = styled.section`
-  display: flex;
-  justify-content: space-around;
   max-width: 144rem;
   width: 100%;
   margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
   gap: 2.5rem;
-
-  @media (max-width: 1024px) {
-    & {
-      flex-wrap: wrap;
-      padding: 24px 12px;
-    }
-  }
+  padding: 2.4rem 1.2rem;
+  line-height: var(--spacing-xl);
 `;
 
 export const AdvantagesContentWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  line-height: 24px;
-
   span {
     opacity: 0.6;
-  }
-
-  @media (max-width: 1024px) {
-    & {
-      width: 45%;
-    }
-  }
-
-  @media (max-width: 480px) {
-    & {
-      width: 80%;
-    }
   }
 `;
 
 export const TitleWrapper = styled.section`
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   text-transform: uppercase;
   padding-bottom: 2.5rem;
 
   p {
-    font-size: 25px;
+    font-size: var(--fs-heading-6);
+    font-weight: var(--fw-heading-6);
   }
 `;

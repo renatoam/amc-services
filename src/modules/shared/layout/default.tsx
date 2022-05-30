@@ -3,6 +3,7 @@ import Fillet from "@shared/components/molecules/Fillet";
 import { ChildrenType } from "@shared/types";
 import AdvantagesBar from "@shared/components/molecules/AdvantagesBar";
 import Footer from "@shared/components/molecules/Footer";
+import AdvantagesBar from "@home/components/AdvantagesBar";
 
 export default function DefaultLayout({ children }: ChildrenType) {
   return (
