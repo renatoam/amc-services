@@ -15,7 +15,12 @@ export default function AdvantagesBar() {
         {textsAdvantages.map((data) => (
           <AdvantagesContentWrapper key={data.id}>
             <TitleWrapper>
-              <Image src={data.icon} width="35px" height="40px" alt={data.alt} />
+              <Image
+                src={data.icon}
+                width="35px"
+                height="40px"
+                alt={data.alt}
+              />
               <Text variant="p">{data.title}</Text>
             </TitleWrapper>
             <Text variant="p">{data.subtitle}</Text>
