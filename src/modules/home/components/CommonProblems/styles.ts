@@ -51,7 +51,7 @@ export const CommonProblemsCard = styled.section`
     width: 20.2rem;
 
     svg {
-      font-size: 12rem;
+      font-size: 12rem !important;
     }
   }
 `
