@@ -6,7 +6,8 @@ const initialContextValue: AccordionContextProps = {
   id: '',
   handleChange: undefined,
   trigger: <></>,
-  triggerStyle: ''
+  triggerStyle: '',
+  content: <></>
 }
 
 export const AccordionContext = createContext<AccordionContextProps>(initialContextValue)
@@ -17,9 +18,9 @@ interface AccordionProviderProps extends ChildrenType {
   props: AccordionContextProps
 }
 
-export const AccordionProvider = ({ children }: AccordionProviderProps) => {
+export const AccordionProvider = ({ children, props }: AccordionProviderProps) => {
 
-  const value: AccordionContextProps = useMemo(() => (initialContextValue), [])
+  const value: AccordionContextProps = useMemo(() => (props), [props])
 
   return (
     <AccordionContext.Provider value={value}>

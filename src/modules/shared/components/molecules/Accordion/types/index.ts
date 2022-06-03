@@ -5,4 +5,6 @@ export interface AccordionContextProps {
   handleChange?: ChangeEventHandler<HTMLInputElement>
   trigger: ReactNode
   triggerStyle?: string
+  content: ReactNode
+  className?: string
 }
