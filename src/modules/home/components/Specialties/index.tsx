@@ -1,15 +1,31 @@
+import { specialties } from "@home/constants";
+import { ExpandMore } from "@mui/icons-material";
+import Icon from "@shared/components/atoms/Icon";
+import Text from "@shared/components/atoms/Text";
 import Title from "@shared/components/atoms/Title";
-import Accordion from "@shared/components/molecules/Accordion";
+import { SpAccordion, SpecialtiesCard, SpecialtiesOverlay, SpecialtiesWrapper } from "./styles";
 
 export default function Specialties() {
   return (
-    <section>
-      <Title>Manutenção Preventiva</Title>
-      <Accordion
-        id="specialties"
-        trigger={<button>Teste</button>}
-        content={<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam in, iusto et distinctio nobis, quo atque minima quibusdam consequatur magnam voluptates ipsum, fuga minus assumenda molestiae. Eos placeat ea consectetur.</p>}
-      />
-    </section>
+    <SpecialtiesWrapper>
+      {specialties.map(specialtie => {
+        return (
+          <SpecialtiesCard key={specialtie.id} image={specialtie.image}>
+            <SpecialtiesOverlay>
+              <Title variant="h2" hstyle="h5">{specialtie.title}</Title>
+              <SpAccordion
+                id={specialtie.id}
+                trigger={
+                  <div className="shine">
+                    <Icon MuiIcon={ExpandMore} />
+                  </div>
+                }
+                content={<Text>{specialtie.description}</Text>}
+              />
+            </SpecialtiesOverlay>
+          </SpecialtiesCard>
+        )
+      })}
+    </SpecialtiesWrapper>
   )
 }

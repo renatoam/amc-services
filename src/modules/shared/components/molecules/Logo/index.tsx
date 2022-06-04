@@ -4,10 +4,10 @@ export default function Logo() {
   return (
     <Image
       id="logo"
-      src="/images/amc-logo.svg"
+      src="/images/logotipo.svg"
       alt="AMC logo"
-      height={24}
-      width={144}
+      height={100}
+      width={200}
     />
   );
 }
