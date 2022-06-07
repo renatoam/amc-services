@@ -12,7 +12,7 @@ export default function DefaultHeader() {
   return (
     <Header>
       <HeaderContent>
-        <Logo />
+        <Logo size="small" />
         <List className={matches ? "hidden" : ""}>
           {navLinks.map((item) => (
             <ListItem key={item.id}>
