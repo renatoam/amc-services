@@ -8,6 +8,7 @@ import { useState } from "react";
 import { MuiIconProps } from "@shared/types/mui";
 import Chevron from "./components/Chevron";
 import { questions } from "./constants";
+import SectionTitle from "@shared/components/molecules/SectionTitles";
 import { useMediaQuery } from "@mui/material";
 
 export default function FAQ() {
@@ -21,21 +22,24 @@ export default function FAQ() {
   }
 
   return (
-    <FAQWrapper>
-      {questions.map(question => {
-        return (
-          <Question key={question.id}>
-            <Chevron />
-            <FaqAccordion
-              id={question.id}
-              trigger={<Title variant="h3" hstyle={matches ? "h5" : "h6"}>{question.title}</Title>}
-              handleChange={handleChange}
-              content={<Text size={matches ? "regular" : "small"}>{question.content}</Text>}
-            />
-            <Icon MuiIcon={icon} variant="default" />
-          </Question>
-        )
-      })}
-    </FAQWrapper>
+    <>
+      <SectionTitle title="FAQ" />
+      <FAQWrapper>
+        {questions.map(question => {
+          return (
+            <Question key={question.id}>
+              <Chevron />
+              <FaqAccordion
+                id={question.id}
+                trigger={<Title variant="h3" className={matches ? "h5" : "h6"}>{question.title}</Title>}
+                handleChange={handleChange}
+                content={<Text size={matches ? "regular" : "small"}>{question.content}</Text>}
+              />
+              <Icon MuiIcon={icon} variant="default" />
+            </Question>
+          )
+        })}
+      </FAQWrapper>
+    </>
   )
 }

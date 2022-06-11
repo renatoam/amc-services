@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import AdvantagesBar from ".";
-import { debug } from "console";
 
 describe("test Advantagesbar component", () => {
   it("advantagesbar is receiving titles correct", () => {
