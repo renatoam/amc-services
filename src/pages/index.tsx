@@ -8,9 +8,9 @@ import FAQ from "@shared/components/organisms/FAQ";
 export default function HomePage() {
   return (
     <>
+      <LatestServices />
       <CommonProblems />
       <Attendance />
-      <LatestServices />
       <Testimonials />
       <FAQ />
       <Contact />

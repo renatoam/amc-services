@@ -10,6 +10,7 @@ export const AdvantagesContainer = styled.section`
   min-height: 24rem;
   display: flex;
   margin: 1.2rem 0;
+  padding: 4rem
 `;
 
 export const AdvantagesWrapper = styled.section`
@@ -18,8 +19,7 @@ export const AdvantagesWrapper = styled.section`
   margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
-  gap: 2.5rem;
-  padding: 2.4rem 1.2rem;
+  gap: 5.5rem 2.5rem;
   line-height: var(--spacing-xl);
 `;
 

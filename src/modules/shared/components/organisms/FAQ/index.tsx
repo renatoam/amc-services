@@ -8,6 +8,7 @@ import { useState } from "react";
 import { MuiIconProps } from "@shared/types/mui";
 import Chevron from "./components/Chevron";
 import { questions } from "./constants";
+import SectionTitle from "@shared/components/molecules/SectionTitles";
 
 export default function FAQ() {
   const [icon, setIcon] = useState<MuiIconProps>(AddIcon)
@@ -19,26 +20,29 @@ export default function FAQ() {
   }
 
   return (
-    <FAQWrapper>
-      {questions.map(question => {
-        return (
-          <Question key={question.id}>
-            <Chevron />
-            <Accordion>
-              <input id={question.id} type="checkbox" onChange={handleChange} />
-              <label htmlFor={question.id} className="title">
-                <Title variant="h3" hstyle="h5">{question.title}</Title>
-              </label>
-              <section className="content">
-                <Text>{question.content}</Text>
-              </section>
-            </Accordion>
-            <figure>
-              <Icon MuiIcon={icon} variant="default" />
-            </figure>
-          </Question>
-        )
-      })}
-    </FAQWrapper>
+    <>
+      <SectionTitle title="FAQ" />
+      <FAQWrapper>
+        {questions.map(question => {
+          return (
+            <Question key={question.id}>
+              <Chevron />
+              <Accordion>
+                <input id={question.id} type="checkbox" onChange={handleChange} />
+                <label htmlFor={question.id} className="title">
+                  <Title variant="h3" className="h5">{question.title}</Title>
+                </label>
+                <section className="content">
+                  <Text>{question.content}</Text>
+                </section>
+              </Accordion>
+              <figure>
+                <Icon MuiIcon={icon} variant="default" />
+              </figure>
+            </Question>
+          )
+        })}
+      </FAQWrapper>
+    </>
   )
 }

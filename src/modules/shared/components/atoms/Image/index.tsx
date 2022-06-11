@@ -7,14 +7,16 @@ type CustomImageProps = ImageProps & {
 };
 
 export default function Image(props: CustomImageProps) {
+  const { figureWidth, figureHeight, ...rest } = props
+
   return (
     <Figure
       style={{
-        width: props.figureWidth,
-        height: props.figureHeight
+        width: figureWidth,
+        height: figureHeight
       }}
     >
-      <NextImage {...props} />
+      <NextImage {...rest} />
     </Figure>
   );
 }

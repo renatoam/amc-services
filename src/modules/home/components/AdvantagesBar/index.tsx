@@ -17,8 +17,8 @@ export default function AdvantagesBar() {
             <TitleWrapper>
               <Image
                 src={data.icon}
-                width="35px"
-                height="40px"
+                width={35}
+                height={40}
                 alt={data.alt}
               />
               <Text variant="p">{data.title}</Text>
