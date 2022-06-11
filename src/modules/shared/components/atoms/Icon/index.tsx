@@ -1,6 +1,5 @@
 import { MuiIconProps } from "@shared/types/mui";
 import { GenericProps } from "@shared/types/react";
-import { Fragment } from "react";
 import Link from "../Link";
 import { CustomIcon } from "./styles";
 
@@ -14,14 +13,18 @@ export interface IconProps extends GenericProps {
 }
 
 export default function Icon(props: IconProps) {
-  const { variant = 'circular', MuiIcon, href, title } = props
-  const Wrapper = href ? Link : Fragment
+  const { variant = 'circular', MuiIcon, href, title = 'Go to social medias' } = props
+  const content = (
+    <CustomIcon className={variant} {...props}>
+      <MuiIcon />
+    </CustomIcon>
+  )
+
+  if (!href) return <>{content}</>
 
   return (
-    <Wrapper href={href} title={title ?? 'Go to social medias'}>
-      <CustomIcon className={variant} {...props}>
-        <MuiIcon />
-      </CustomIcon>
-    </Wrapper>
+    <Link href={href} title={title}>
+      {content}
+    </Link>
   )
 }

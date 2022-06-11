@@ -3,10 +3,14 @@ import { AccordionProvider } from "./context";
 import { AccordionContextProps } from "./types";
 
 export default function Accordion(props: AccordionContextProps) {
+  const { className } = props
+
   return (
     <AccordionProvider props={props}>
-      <Acc>
-        <Acc.Header />
+      <Acc {...{ className }}>
+        <Acc.Input />
+        <Acc.Label />
+        <Acc.Content />
       </Acc>
     </AccordionProvider>
   )

@@ -1,10 +1,14 @@
 import { ChildrenType } from "@shared/types";
-import AccHeader from "./AccordionHeader";
+import AccContent from "./AccordionContent";
+import AccInput from "./AccordionInput";
+import AccLabel from "./AccordionLabel";
 
-export default function Acc({ children }: ChildrenType) {
+export default function Acc({ children, ...props }: ChildrenType) {
   return (
-    <>{children}</>
+    <section {...props}>{children}</section>
   )
 }
 
-Acc.Header = AccHeader
+Acc.Input = AccInput
+Acc.Label = AccLabel
+Acc.Content = AccContent

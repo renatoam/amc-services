@@ -13,7 +13,7 @@ export const HeaderContent = styled.section`
   display: flex;
   height: 11.2rem;
   justify-content: space-around;
-  width: clamp(60rem, 70vw, 140rem);
+  width: clamp(120rem, 70vw, 192rem);
 
   @media (max-width: 700px) {
     & {
